@@ -1,0 +1,2 @@
+# 此文件用于确保 models 目录被 Git 跟踪
+# 训练生成的模型文件 (.tar.gz) 会被 .gitignore 忽略

@@ -1,0 +1,16 @@
+language: zh
+
+pipeline:
+- name: JiebaTokenizer             # 中文分词器（使用 Jieba）
+- name: RegexFeaturizer            # 正则特征提取
+- name: LexicalSyntacticFeaturizer   # 词法句法特征
+- name: CountVectorsFeaturizer     # 词级向量特征
+- name: CountVectorsFeaturizer     # 字符级向量特征
+  analyzer: char_wb
+  min_ngram: 1
+  max_ngram: 4
+- name: DIETClassifier              # 意图分类和实体提取
+  epochs: 100
+- name: FallbackClassifier         # 降级处理
+  threshold: 0.3
+assistant_id: 20260103-182714-central-rectangle
